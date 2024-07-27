@@ -1,0 +1,6 @@
+SwitchToDestination/bin
+SwitchToDestination/obj
+.vs
+_ReSharper.Caches
+*.user
+*.zip

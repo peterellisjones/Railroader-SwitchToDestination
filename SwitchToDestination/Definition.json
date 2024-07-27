@@ -1,0 +1,9 @@
+{
+    "manifestVersion": 1,
+    "id": "SwitchToDestination",
+    "name": "SwitchToDestination",
+    "version": "1.0.0",
+    "assemblies": [
+        "SwitchToDestination"
+    ]
+}
