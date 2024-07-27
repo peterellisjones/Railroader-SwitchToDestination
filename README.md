@@ -10,7 +10,7 @@ This mod adds a button to the frieght car operations tab to open all switches be
 * It doesn't know what your other trains are doing, so be careful you don't accidentally move switches other trains are using
 
 
-If you find this mod useful you might like **[SmartOrdesr](https://github.com/peterellisjones/Railroader-SmartOrders)** and **[FlyShuntUI](https://github.com/peterellisjones/Railroader-FlyShuntUI)** as well.
+If you find this mod useful you might like **[SmartOrders](https://github.com/peterellisjones/Railroader-SmartOrders)** and **[FlyShuntUI](https://github.com/peterellisjones/Railroader-FlyShuntUI)** as well.
 
 ## Installation
 
