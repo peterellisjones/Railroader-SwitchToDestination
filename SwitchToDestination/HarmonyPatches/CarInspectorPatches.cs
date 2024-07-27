@@ -15,6 +15,8 @@ using System.Diagnostics.CodeAnalysis;
 using SwitchToDestination;
 using UI.Common;
 using UnityEngine;
+using Game;
+using Network.Messages;
 
 
 [PublicAPI]
@@ -173,7 +175,7 @@ public static class CarInspectorPatches
 
         if(switchCount == 0)
         {
-            Multiplayer.Broadcast($"No switches found between car {car.DisplayName} and {destination.DisplayName}, nothing to do");
+            Say($"No switches found between car {car.DisplayName} and {destination.DisplayName}, nothing to do");
             return;
         } 
 
@@ -183,7 +185,7 @@ public static class CarInspectorPatches
             {
                 // if we didn't have to move anything, and there is another possible span then try the other span
                 var nextSpan = (span + 1) % destination.Spans.Length;
-                Multiplayer.Broadcast($"Switches already set for track {span + 1} at {destination.DisplayName}, routing to track {nextSpan + 1} instead");
+                Say($"Switches already set for track {span + 1} at {destination.DisplayName}, routing to track {nextSpan + 1} instead");
                 OpenSwitchesToDestination(car, destination, nextSpan, false);
 
                 return;
@@ -214,7 +216,13 @@ public static class CarInspectorPatches
             message = $"{switchesSetStr} to clear route for {car.DisplayName} to go to {destinationName}";
         }
 
-        Multiplayer.Broadcast(message);
+        Say(message);
+    }
+
+    private static void Say(string message)
+    {
+        Alert alert = new Alert(AlertStyle.Console, message, TimeWeather.Now.TotalSeconds);
+        WindowManager.Shared.Present(alert);
     }
 
     private static void DebugLog(string message)
@@ -224,6 +232,6 @@ public static class CarInspectorPatches
             return;
         }
 
-        Multiplayer.Broadcast(message);
+        Say(message);
     }
 }
